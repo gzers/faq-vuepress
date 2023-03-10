@@ -18,9 +18,8 @@ const svgImage = ref(`/images/not-found/not-found-${Math.floor(Math.random() * 4
   <div class="theme-container">
     <main class="page">
       <div class="theme-default-content">
-
+        <var-image :src="svgImage" />
         <blockquote>{{ getMsg() }}</blockquote>
-
         <RouterLink :to="homeLink">
           {{ homeText }}
         </RouterLink>
