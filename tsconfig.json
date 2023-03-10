@@ -1,0 +1,24 @@
+{
+    "compilerOptions": {
+        "jsx": "preserve",
+        "target": "es5",
+        "sourceMap": true,
+        "baseUrl": ".",
+        "paths": {
+            "@/*": ["./docs/.vuepress/theme/*"]
+        },
+        "types": ["@vuepress/client/types"]
+    },
+    "exclude": [
+        "node_modules"
+    ],
+    "include": [
+        "docs/.vuepress/theme/**/*.vue",
+        "docs/.vuepress/theme/**/*.ts",
+        "docs/.vuepress/theme/**/*.tsx",
+        "docs/.vuepress/theme/**/*.jsx",
+        "docs/.vuepress/theme/**/*.d.ts",
+        "auto-imports.d.ts",
+        "components.d.ts"
+    ],
+}
