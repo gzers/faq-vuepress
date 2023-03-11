@@ -12,12 +12,9 @@
   "license": "ISC",
   "devDependencies": {
     "sass": "^1.58.3",
-    "unplugin-auto-import": "^0.15.1",
-    "unplugin-vue-components": "^0.24.1",
-    "vuepress": "^2.0.0-beta.61"
+    "vuepress": "2.0.0-beta.61"
   },
   "dependencies": {
-    "@varlet/ui": "^2.8.6",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
     "pinia": "^2.0.33"
   }

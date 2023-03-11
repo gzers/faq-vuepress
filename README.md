@@ -1,16 +1,16 @@
 # faq-vuepress
 
-1. 安装 Vuepress 2.0依赖包，手动安装。
+1. 安装全部依赖包。
+
+```shell
+npm i --legacy-peer-deps
+```
+
+2. 安装 Vuepress 2.0依赖包，手动安装。
 
 ```shell
 npm install -D vuepress@next
 ```
-
-2. 安装全部依赖包。
-
-```shell
-npm i
- ```
 
 3. 升级依赖以确保你的项目只包含单个版本的相关包。(可能导致问题)
 
