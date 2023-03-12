@@ -3,34 +3,35 @@ import vueJsx from "@vitejs/plugin-vue-jsx";
 import autoImport from 'unplugin-auto-import/vite';
 import components from "unplugin-vue-components/vite";
 import { path } from "@vuepress/utils";
-import { VarletUIResolver } from 'unplugin-vue-components/resolvers'
+import { QuasarResolver } from 'unplugin-vue-components/resolvers'
+// @ts-ignore
 
 export default {
     bundler: viteBundler({
         viteOptions: {
             css: {
-                //* css模块化
-                modules: { // css模块化 文件以.module.[css|less|scss]结尾
-                    generateScopedName: '[name]__[local]___[hash:base64:5]',
-                    hashPrefix: 'prefix',
-                },
+                preprocessorOptions: {
+                    scss: {
+                        sassOptions: {
+                            // ignore sass deprecation errors
+                            quietDeps: true
+                        }
+                    }
+                }
             },
             plugins: [
                 vueJsx(),
                 components({
                     resolvers: [
-                        VarletUIResolver()
+                        QuasarResolver()
                     ]
                 }),
                 autoImport({
                     resolvers: [
-                        VarletUIResolver({ autoImport: true })
+                        QuasarResolver()
                     ]
                 }),
             ],
-            ssr: {
-                noExternal: ['varlet']
-            },
             resolve: {
                 alias: {
                     "@": path.resolve(__dirname, "./"),

@@ -23,3 +23,9 @@ npx vp-update
 ```shell
 npm install pinia --force
 ```
+
+5. 一些可能解决报错的方法
+
+```shell
+npm update --legacy-peer-deps
+```
