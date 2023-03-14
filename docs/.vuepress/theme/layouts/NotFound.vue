@@ -24,8 +24,9 @@ const svgImage = ref(`/images/not-found/not-found-${Math.floor(Math.random() * 4
             alt="404"
         />
         <blockquote>{{ getMsg() }}</blockquote>
+
         <RouterLink :to="homeLink">
-          {{homeText}}
+          <var-button text type="primary">{{homeText}}</var-button>
         </RouterLink>
       </div>
     </main>

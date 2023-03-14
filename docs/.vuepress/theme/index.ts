@@ -2,6 +2,7 @@ import type { Theme } from '@vuepress/core'
 import { path } from '@vuepress/utils'
 import { defaultTheme, type DefaultThemeOptions } from '@vuepress/theme-default'
 // import { registerComponentsPlugin } from '@vuepress/plugin-register-components'
+import { palettePlugin } from '@vuepress/plugin-palette'
 
 export const faqTheme = (options: DefaultThemeOptions): Theme => {
     return {
@@ -18,6 +19,9 @@ export const faqTheme = (options: DefaultThemeOptions): Theme => {
             // registerComponentsPlugin({
             //     componentsDir: path.resolve(__dirname, './components'),
             // }),
+            palettePlugin({
+                preset: 'sass'
+            }),
         ],
 
         alias: {

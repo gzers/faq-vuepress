@@ -1,7 +1,13 @@
 import pinia from '@/stores/store'
 import { useThemeStore } from "@/stores/theme";
+import themeConfigData from '@/utils/getThemeConfig'
+
 const theme = useThemeStore(pinia)
 const classSymbol = 'dark'
+
+export function setThemeConfig() {
+    theme.changeTheme(themeConfigData())
+}
 
 function findDarkClass(node, classSymbol) {
     let isSymbol = false
@@ -24,7 +30,7 @@ function callback(mutations, observer){
         const isDarkMode = findDarkClass(mutations[0].target, classSymbol)
         // 通过判断isDarkMode是否提交action，否则会导致死循环。
         if (theme.isDarkMode !== isDarkMode) {
-            theme.changeCurrenTheme(isDarkMode)
+            theme.changeDark(isDarkMode)
         }
     }
 }
@@ -38,7 +44,7 @@ export function getAssignHtmlObserver() {
 
     const isDarkMode = findDarkClass(html, classSymbol)
     if (theme.isDarkMode !== isDarkMode) {
-        theme.changeCurrenTheme(isDarkMode)
+        theme.changeDark(isDarkMode)
     }
 
     // 通过MutationObserver接口监视对html标签的data-theme变化，判断当前是否为暗黑模式。

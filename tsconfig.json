@@ -7,7 +7,8 @@
         "paths": {
             "@/*": ["./docs/.vuepress/theme/*"]
         },
-        "types": ["@vuepress/client/types"]
+        "types": ["@vuepress/client/types"],
+        "allowSyntheticDefaultImports": true
     },
     "exclude": [
         "node_modules"
